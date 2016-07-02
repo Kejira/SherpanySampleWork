@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
+    <entity name="Adress" representedClassName=".Adress">
+        <attribute name="adress" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="long" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="suits" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Suite" inverseName="adress" inverseEntity="Suite" syncable="YES"/>
+        <relationship name="zip" maxCount="1" deletionRule="Nullify" destinationEntity="Zip" inverseName="adresses" inverseEntity="Zip" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Album" representedClassName=".Album" syncable="YES">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photo" inverseName="album" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="albums" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="City" representedClassName=".City" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="postalCodes" toMany="YES" deletionRule="Cascade" destinationEntity="Zip" inverseName="city" inverseEntity="Zip" syncable="YES"/>
+    </entity>
+    <entity name="Company" representedClassName=".Company" syncable="YES">
+        <attribute name="bs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="catchPhrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="users" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="company" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName=".Photo" syncable="YES">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailUrl" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="photos" inverseEntity="Album" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName=".Post" syncable="YES">
+        <attribute name="body" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Suite" representedClassName=".Suite" syncable="YES">
+        <attribute name="suite" attributeType="String" syncable="YES"/>
+        <relationship name="adress" maxCount="1" deletionRule="Nullify" destinationEntity="Adress" inverseName="suits" inverseEntity="Adress" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="suite" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="users" inverseEntity="Company" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
+        <relationship name="suite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suite" inverseName="users" inverseEntity="Suite" syncable="YES"/>
+        <relationship name="website" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Website" inverseName="users" inverseEntity="Website" syncable="YES"/>
+    </entity>
+    <entity name="Website" representedClassName=".Website" syncable="YES">
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="users" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="website" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Zip" representedClassName=".Zip" syncable="YES">
+        <attribute name="code" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="adresses" toMany="YES" deletionRule="Cascade" destinationEntity="Adress" inverseName="zip" inverseEntity="Adress" syncable="YES"/>
+        <relationship name="city" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="postalCodes" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Adress" positionX="261" positionY="189" width="128" height="120"/>
+        <element name="Album" positionX="288" positionY="243" width="128" height="105"/>
+        <element name="City" positionX="315" positionY="252" width="128" height="75"/>
+        <element name="Company" positionX="333" positionY="270" width="128" height="105"/>
+        <element name="Photo" positionX="351" positionY="288" width="128" height="135"/>
+        <element name="Post" positionX="306" positionY="243" width="128" height="105"/>
+        <element name="Suite" positionX="315" positionY="252" width="128" height="90"/>
+        <element name="User" positionX="324" positionY="261" width="128" height="195"/>
+        <element name="Website" positionX="333" positionY="270" width="128" height="75"/>
+        <element name="Zip" positionX="342" positionY="279" width="128" height="90"/>
     </elements>
 </model>
