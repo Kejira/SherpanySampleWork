@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D8CF22398BCCBB1B11DBB9B /* Pods_Sherpany.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */; };
+		4134258A1D279BCF0048BB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413425891D279BCF0048BB35 /* AppDelegate.swift */; };
+		4134258D1D279BCF0048BB35 /* Sherpany.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4134258B1D279BCF0048BB35 /* Sherpany.xcdatamodeld */; };
+		4134258F1D279BCF0048BB35 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134258E1D279BCF0048BB35 /* MasterViewController.swift */; };
+		413425911D279BCF0048BB35 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413425901D279BCF0048BB35 /* DetailViewController.swift */; };
+		413425941D279BCF0048BB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413425921D279BCF0048BB35 /* Main.storyboard */; };
+		413425961D279BCF0048BB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413425951D279BCF0048BB35 /* Assets.xcassets */; };
+		413425991D279BCF0048BB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413425971D279BCF0048BB35 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32108205EEF04935CA0F3739 /* Pods-Sherpany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpany.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany.debug.xcconfig"; sourceTree = "<group>"; };
+		413425861D279BCF0048BB35 /* Sherpany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpany.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		413425891D279BCF0048BB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4134258C1D279BCF0048BB35 /* Sherpany.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sherpany.xcdatamodel; sourceTree = "<group>"; };
+		4134258E1D279BCF0048BB35 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		413425901D279BCF0048BB35 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		413425931D279BCF0048BB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		413425951D279BCF0048BB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		413425981D279BCF0048BB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4134259A1D279BCF0048BB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpany.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		413425831D279BCF0048BB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D8CF22398BCCBB1B11DBB9B /* Pods_Sherpany.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A21C840926256AA69E21746 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32108205EEF04935CA0F3739 /* Pods-Sherpany.debug.xcconfig */,
+				E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4134257D1D279BCF0048BB35 = {
+			isa = PBXGroup;
+			children = (
+				413425881D279BCF0048BB35 /* Sherpany */,
+				413425871D279BCF0048BB35 /* Products */,
+				0A21C840926256AA69E21746 /* Pods */,
+				A1E695DA0629DDD803CEFFD1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		413425871D279BCF0048BB35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				413425861D279BCF0048BB35 /* Sherpany.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		413425881D279BCF0048BB35 /* Sherpany */ = {
+			isa = PBXGroup;
+			children = (
+				413425891D279BCF0048BB35 /* AppDelegate.swift */,
+				4134258E1D279BCF0048BB35 /* MasterViewController.swift */,
+				413425901D279BCF0048BB35 /* DetailViewController.swift */,
+				413425921D279BCF0048BB35 /* Main.storyboard */,
+				413425951D279BCF0048BB35 /* Assets.xcassets */,
+				413425971D279BCF0048BB35 /* LaunchScreen.storyboard */,
+				4134259A1D279BCF0048BB35 /* Info.plist */,
+				4134258B1D279BCF0048BB35 /* Sherpany.xcdatamodeld */,
+			);
+			path = Sherpany;
+			sourceTree = "<group>";
+		};
+		A1E695DA0629DDD803CEFFD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		413425851D279BCF0048BB35 /* Sherpany */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4134259D1D279BCF0048BB35 /* Build configuration list for PBXNativeTarget "Sherpany" */;
+			buildPhases = (
+				4618E1BC11B969BAF8C4B746 /* [CP] Check Pods Manifest.lock */,
+				413425821D279BCF0048BB35 /* Sources */,
+				413425831D279BCF0048BB35 /* Frameworks */,
+				413425841D279BCF0048BB35 /* Resources */,
+				289079E2FE1F61B948F724C2 /* [CP] Embed Pods Frameworks */,
+				65D8700216ECCAA92EE507D1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sherpany;
+			productName = Sherpany;
+			productReference = 413425861D279BCF0048BB35 /* Sherpany.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4134257E1D279BCF0048BB35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = rvi;
+				TargetAttributes = {
+					413425851D279BCF0048BB35 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 413425811D279BCF0048BB35 /* Build configuration list for PBXProject "Sherpany" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4134257D1D279BCF0048BB35;
+			productRefGroup = 413425871D279BCF0048BB35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				413425851D279BCF0048BB35 /* Sherpany */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		413425841D279BCF0048BB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				413425991D279BCF0048BB35 /* LaunchScreen.storyboard in Resources */,
+				413425961D279BCF0048BB35 /* Assets.xcassets in Resources */,
+				413425941D279BCF0048BB35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		289079E2FE1F61B948F724C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4618E1BC11B969BAF8C4B746 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65D8700216ECCAA92EE507D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		413425821D279BCF0048BB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4134258A1D279BCF0048BB35 /* AppDelegate.swift in Sources */,
+				4134258D1D279BCF0048BB35 /* Sherpany.xcdatamodeld in Sources */,
+				4134258F1D279BCF0048BB35 /* MasterViewController.swift in Sources */,
+				413425911D279BCF0048BB35 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		413425921D279BCF0048BB35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				413425931D279BCF0048BB35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		413425971D279BCF0048BB35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				413425981D279BCF0048BB35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4134259B1D279BCF0048BB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4134259C1D279BCF0048BB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4134259E1D279BCF0048BB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32108205EEF04935CA0F3739 /* Pods-Sherpany.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sherpany/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.rvi.Sherpany;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4134259F1D279BCF0048BB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sherpany/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.rvi.Sherpany;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		413425811D279BCF0048BB35 /* Build configuration list for PBXProject "Sherpany" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4134259B1D279BCF0048BB35 /* Debug */,
+				4134259C1D279BCF0048BB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4134259D1D279BCF0048BB35 /* Build configuration list for PBXNativeTarget "Sherpany" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4134259E1D279BCF0048BB35 /* Debug */,
+				4134259F1D279BCF0048BB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4134258B1D279BCF0048BB35 /* Sherpany.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4134258C1D279BCF0048BB35 /* Sherpany.xcdatamodel */,
+			);
+			currentVersion = 4134258C1D279BCF0048BB35 /* Sherpany.xcdatamodel */;
+			path = Sherpany.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4134257E1D279BCF0048BB35 /* Project object */;
+}
