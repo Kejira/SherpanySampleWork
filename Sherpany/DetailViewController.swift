@@ -10,10 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var detailTitleLabel: UILabel!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    
+    var openedSections = [Int:Bool]()
 
-
-    var detailItem: AnyObject? {
+    var detailItem: Post? {
         didSet {
             // Update the view.
             self.configureView()
@@ -23,8 +26,10 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("timeStamp")!.description
+            if let _ = self.detailDescriptionLabel {
+                detailTitleLabel.text = detail.title
+                detailDescriptionLabel.text = detail.body
+                collectionView.reloadData()
             }
         }
     }
@@ -43,3 +48,75 @@ class DetailViewController: UIViewController {
 
 }
 
+extension DetailViewController: UICollectionViewDataSource {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return self.detailItem?.user?.albums?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let _ = openedSections[section],
+            let album = self.detailItem?.user?.sortedAlbums() {
+            return album[section].photos?.count ?? 0
+        }
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath)
+        self.configureCell(cell, atIndexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: UICollectionViewCell, atIndexPath indexPath: NSIndexPath) {
+        if let cell = cell as? PhotoCollectionCell,
+            let photos = self.detailItem?.user?.sortedAlbums()[indexPath.section].sortedPhotos() {
+            
+            let photo = photos[indexPath.row]
+            
+            if let thumbnail = photo.thumbnail {
+                cell.thumbnailImage.image = UIImage(named: thumbnail)
+                cell.activityIndicator.hidden = true
+            }
+            else {
+                cell.thumbnailImage.image = nil
+                cell.activityIndicator.hidden = false
+                
+                // donwload image now
+            }
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath)
+        configureHeaderView(cell, atIndexPath: indexPath)
+        return cell
+    }
+    
+    func configureHeaderView(cell: UICollectionReusableView, atIndexPath indexPath: NSIndexPath) {
+        if let cell = cell as? CollectionHeaderView,
+            let album = self.detailItem?.user?.sortedAlbums()[indexPath.section] {
+            cell.sectionButton.tag = indexPath.section
+            cell.sectionButton.addTarget(self, action: #selector(DetailViewController.displaySection), forControlEvents: UIControlEvents.TouchUpInside)
+            
+            cell.titleLabel.text = album.name
+            
+            if let _ = openedSections[indexPath.section] {
+                cell.sectionButton.setTitle("Hide", forState: UIControlState.Normal)
+            }
+            else {
+                cell.sectionButton.setTitle("Show", forState: UIControlState.Normal)
+            }
+        }
+    }
+    
+    func displaySection(button: UIButton) {
+        let section = button.tag
+        if let _ = openedSections[section] {
+            openedSections[section] = nil
+        }
+        else {
+            openedSections[section] = true
+        }
+        collectionView.reloadSections(NSIndexSet(index: section))
+    }
+}

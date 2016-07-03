@@ -49,6 +49,8 @@
 		41FCF1AF1D28FF9F00C4B536 /* Photo+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1AE1D28FF9F00C4B536 /* Photo+Initialization.swift */; };
 		41FCF1B11D29050400C4B536 /* DataController+PhotoRemoteInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B01D29050400C4B536 /* DataController+PhotoRemoteInit.swift */; };
 		41FCF1B31D290D4200C4B536 /* MasterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B21D290D4200C4B536 /* MasterViewCell.swift */; };
+		41FCF1B51D29327B00C4B536 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */; };
+		41FCF1B71D29378B00C4B536 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		41FCF1AE1D28FF9F00C4B536 /* Photo+Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+Initialization.swift"; path = "Classes/CoreData/Model/Photo+Initialization.swift"; sourceTree = "<group>"; };
 		41FCF1B01D29050400C4B536 /* DataController+PhotoRemoteInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+PhotoRemoteInit.swift"; path = "Classes/CoreData/DataController+PhotoRemoteInit.swift"; sourceTree = "<group>"; };
 		41FCF1B21D290D4200C4B536 /* MasterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewCell.swift; path = Classes/MasterViewCell.swift; sourceTree = "<group>"; };
+		41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeaderView.swift; path = Classes/CollectionHeaderView.swift; sourceTree = "<group>"; };
+		41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionCell.swift; path = Classes/PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpany.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +151,8 @@
 				4134258E1D279BCF0048BB35 /* MasterViewController.swift */,
 				41FCF1B21D290D4200C4B536 /* MasterViewCell.swift */,
 				413425901D279BCF0048BB35 /* DetailViewController.swift */,
+				41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */,
+				41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */,
 				413425921D279BCF0048BB35 /* Main.storyboard */,
 				413425951D279BCF0048BB35 /* Assets.xcassets */,
 				413425971D279BCF0048BB35 /* LaunchScreen.storyboard */,
@@ -383,6 +389,8 @@
 				41FCF19F1D282BE100C4B536 /* User+initialization.swift in Sources */,
 				413426341D27C5AF0048BB35 /* Album+CoreDataProperties.swift in Sources */,
 				41FCF1AD1D28FDF100C4B536 /* Album+Initialization.swift in Sources */,
+				41FCF1B51D29327B00C4B536 /* CollectionHeaderView.swift in Sources */,
+				41FCF1B71D29378B00C4B536 /* PhotoCollectionCell.swift in Sources */,
 				41FCF1A31D283B8000C4B536 /* Company+Init.swift in Sources */,
 				413426381D27C5AF0048BB35 /* Suite+CoreDataProperties.swift in Sources */,
 				413426281D27C5AF0048BB35 /* Post+CoreDataProperties.swift in Sources */,

@@ -6,5 +6,6 @@ use_frameworks!
 target 'Sherpany' do
 
   pod 'Alamofire', '~> 3.4'
+  pod 'AlamofireImage', '~> 2.0'
 	
 end
