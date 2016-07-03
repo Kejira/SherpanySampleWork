@@ -18,7 +18,7 @@ class Album: NSManagedObject {
     func sortedPhotos() -> [Photo] {
         if let unsortedPhotos = photos as? Set<Photo> {
             return unsortedPhotos.sort({ (photo1, photo2) -> Bool in
-                return photo1.id?.integerValue < photo2.id?.integerValue
+                return photo1.id.integerValue < photo2.id.integerValue
             })
         }
         return [Photo]()

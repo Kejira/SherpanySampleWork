@@ -18,7 +18,7 @@ class JsonDownloader {
     }
     
     func getUserJson() {
-        getJson("https://jsonplaceholder.typicode.com/users") { response in
+        getJson("http://jsonplaceholder.typicode.com/users") { response in
             if let error = response.result.error {
                 // print error
             }
@@ -31,7 +31,7 @@ class JsonDownloader {
     }
     
     func getPostsJson() {
-        getJson("https://jsonplaceholder.typicode.com/posts/") { response in
+        getJson("http://jsonplaceholder.typicode.com/posts/") { response in
             if let JSON = response.result.value as? NSArray {
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data
@@ -41,7 +41,7 @@ class JsonDownloader {
     }
     
     func getAlbumsJson() {
-        getJson("https://jsonplaceholder.typicode.com/albums/") { response in
+        getJson("http://jsonplaceholder.typicode.com/albums/") { response in
             if let JSON = response.result.value as? NSArray {
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data
@@ -51,7 +51,7 @@ class JsonDownloader {
     }
     
     func getPhotosJson() {
-        getJson("https://jsonplaceholder.typicode.com/photos/") { response in
+        getJson("http://jsonplaceholder.typicode.com/photos/") { response in
             if let JSON = response.result.value as? NSArray{
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data

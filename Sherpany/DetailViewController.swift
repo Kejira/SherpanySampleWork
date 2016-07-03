@@ -38,6 +38,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        
+        let flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.sectionHeadersPinToVisibleBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,15 +76,26 @@ extension DetailViewController: UICollectionViewDataSource {
             
             let photo = photos[indexPath.row]
             
-            if let thumbnail = photo.thumbnail {
-                cell.thumbnailImage.image = UIImage(named: thumbnail)
+            
+            if let thumbnail = photo.thumbnail,
+                let thumbnailImage = UIImage(contentsOfFile: ImageDownloader.sharedInstance.fileInCachesDirectory(thumbnail)) {
+                cell.thumbnailImage.image = thumbnailImage
                 cell.activityIndicator.hidden = true
             }
             else {
                 cell.thumbnailImage.image = nil
                 cell.activityIndicator.hidden = false
                 
+                let url = photo.thumbnailUrl
                 // donwload image now
+                ImageDownloader.sharedInstance.loadImage(url, completion: { [weak self] (image) in
+                    guard let _ = self else {
+                        return
+                    }
+                    
+                    cell.thumbnailImage.image = image
+                    cell.activityIndicator.hidden = true
+                })
             }
         }
     }
@@ -119,4 +133,5 @@ extension DetailViewController: UICollectionViewDataSource {
         }
         collectionView.reloadSections(NSIndexSet(index: section))
     }
+
 }

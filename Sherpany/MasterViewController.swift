@@ -192,3 +192,19 @@ extension MasterViewController: NSFetchedResultsControllerDelegate {
     
 }
 
+extension MasterViewController: UISearchBarDelegate {
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // update predicate
+        if searchText != "" {
+            let predicate = NSPredicate(format: "title CONTAINS[c] '\(searchText)' OR body CONTAINS[c] '\(searchText)'")
+            fetchedResultController.fetchRequest.predicate = predicate
+        }
+        else {
+            fetchedResultController.fetchRequest.predicate = nil
+        }
+        fetchData()
+        tableView.reloadData()
+    }
+}
+
+

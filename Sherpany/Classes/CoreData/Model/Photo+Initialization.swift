@@ -6,6 +6,7 @@
 //  Copyright © 2016 rvi. All rights reserved.
 //
 
+import UIKit
 import CoreData
 
 extension Photo {
@@ -32,6 +33,11 @@ extension Photo {
         photo.url = url
         photo.title = title
         photo.isUpToDate = NSNumber(bool: true)
+        
+        if let thumbnail = photo.thumbnail where
+            UIImage(named: thumbnail) == nil {
+            photo.thumbnail = nil
+        }
         
         let albumFetchRequest = NSFetchRequest(entityName: albumModel)
         albumFetchRequest.predicate = NSPredicate(format: "id == \(albumId)")
