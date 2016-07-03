@@ -14,7 +14,7 @@ import CoreData
 
 extension Zip {
 
-    @NSManaged var code: NSNumber?
+    @NSManaged var code: String?
     @NSManaged var adresses: NSSet?
     @NSManaged var city: NSManagedObject?
 

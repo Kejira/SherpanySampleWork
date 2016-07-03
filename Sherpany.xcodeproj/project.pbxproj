@@ -36,6 +36,18 @@
 		413426391D27C5AF0048BB35 /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413426251D27C5AF0048BB35 /* Suite.swift */; };
 		4134263A1D27C5AF0048BB35 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413426261D27C5AF0048BB35 /* User+CoreDataProperties.swift */; };
 		4134263B1D27C5AF0048BB35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413426271D27C5AF0048BB35 /* User.swift */; };
+		4134263D1D27D9A80048BB35 /* JsonDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4134263C1D27D9A80048BB35 /* JsonDownloader.swift */; };
+		41FCF19B1D28285F00C4B536 /* DataController+UserRemoteInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF19A1D28285F00C4B536 /* DataController+UserRemoteInit.swift */; };
+		41FCF19F1D282BE100C4B536 /* User+initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF19E1D282BE100C4B536 /* User+initialization.swift */; };
+		41FCF1A11D28328E00C4B536 /* AdressInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1A01D28328E00C4B536 /* AdressInitialization.swift */; };
+		41FCF1A31D283B8000C4B536 /* Company+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1A21D283B8000C4B536 /* Company+Init.swift */; };
+		41FCF1A51D28649E00C4B536 /* Website+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1A41D28649E00C4B536 /* Website+Init.swift */; };
+		41FCF1A71D28F9BD00C4B536 /* Post+initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1A61D28F9BD00C4B536 /* Post+initialization.swift */; };
+		41FCF1A91D28FD7A00C4B536 /* DataController+PostRemoteInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1A81D28FD7A00C4B536 /* DataController+PostRemoteInit.swift */; };
+		41FCF1AB1D28FDB500C4B536 /* DataController+AlbumRemoteInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1AA1D28FDB500C4B536 /* DataController+AlbumRemoteInit.swift */; };
+		41FCF1AD1D28FDF100C4B536 /* Album+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1AC1D28FDF100C4B536 /* Album+Initialization.swift */; };
+		41FCF1AF1D28FF9F00C4B536 /* Photo+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1AE1D28FF9F00C4B536 /* Photo+Initialization.swift */; };
+		41FCF1B11D29050400C4B536 /* DataController+PhotoRemoteInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B01D29050400C4B536 /* DataController+PhotoRemoteInit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +82,18 @@
 		413426251D27C5AF0048BB35 /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Suite.swift; path = Classes/CoreData/Model/Suite.swift; sourceTree = "<group>"; };
 		413426261D27C5AF0048BB35 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "Classes/CoreData/Model/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		413426271D27C5AF0048BB35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Classes/CoreData/Model/User.swift; sourceTree = "<group>"; };
+		4134263C1D27D9A80048BB35 /* JsonDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonDownloader.swift; path = Classes/CoreData/JsonDownloader.swift; sourceTree = "<group>"; };
+		41FCF19A1D28285F00C4B536 /* DataController+UserRemoteInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+UserRemoteInit.swift"; path = "Classes/CoreData/DataController+UserRemoteInit.swift"; sourceTree = "<group>"; };
+		41FCF19E1D282BE100C4B536 /* User+initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+initialization.swift"; path = "Classes/CoreData/Model/User+initialization.swift"; sourceTree = "<group>"; };
+		41FCF1A01D28328E00C4B536 /* AdressInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdressInitialization.swift; path = Classes/CoreData/Model/AdressInitialization.swift; sourceTree = "<group>"; };
+		41FCF1A21D283B8000C4B536 /* Company+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Company+Init.swift"; path = "Classes/CoreData/Model/Company+Init.swift"; sourceTree = "<group>"; };
+		41FCF1A41D28649E00C4B536 /* Website+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Website+Init.swift"; path = "Classes/CoreData/Model/Website+Init.swift"; sourceTree = "<group>"; };
+		41FCF1A61D28F9BD00C4B536 /* Post+initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Post+initialization.swift"; path = "Classes/CoreData/Model/Post+initialization.swift"; sourceTree = "<group>"; };
+		41FCF1A81D28FD7A00C4B536 /* DataController+PostRemoteInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+PostRemoteInit.swift"; path = "Classes/CoreData/DataController+PostRemoteInit.swift"; sourceTree = "<group>"; };
+		41FCF1AA1D28FDB500C4B536 /* DataController+AlbumRemoteInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+AlbumRemoteInit.swift"; path = "Classes/CoreData/DataController+AlbumRemoteInit.swift"; sourceTree = "<group>"; };
+		41FCF1AC1D28FDF100C4B536 /* Album+Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Album+Initialization.swift"; path = "Classes/CoreData/Model/Album+Initialization.swift"; sourceTree = "<group>"; };
+		41FCF1AE1D28FF9F00C4B536 /* Photo+Initialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+Initialization.swift"; path = "Classes/CoreData/Model/Photo+Initialization.swift"; sourceTree = "<group>"; };
+		41FCF1B01D29050400C4B536 /* DataController+PhotoRemoteInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+PhotoRemoteInit.swift"; path = "Classes/CoreData/DataController+PhotoRemoteInit.swift"; sourceTree = "<group>"; };
 		482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpany.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +149,7 @@
 				413425971D279BCF0048BB35 /* LaunchScreen.storyboard */,
 				4134259A1D279BCF0048BB35 /* Info.plist */,
 				4134258B1D279BCF0048BB35 /* Sherpany.xcdatamodeld */,
+				4134263C1D27D9A80048BB35 /* JsonDownloader.swift */,
 			);
 			path = Sherpany;
 			sourceTree = "<group>";
@@ -134,6 +159,10 @@
 			children = (
 				413426131D27C5A40048BB35 /* Model */,
 				413426101D27C03B0048BB35 /* DataController.swift */,
+				41FCF19A1D28285F00C4B536 /* DataController+UserRemoteInit.swift */,
+				41FCF1A81D28FD7A00C4B536 /* DataController+PostRemoteInit.swift */,
+				41FCF1AA1D28FDB500C4B536 /* DataController+AlbumRemoteInit.swift */,
+				41FCF1B01D29050400C4B536 /* DataController+PhotoRemoteInit.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -141,28 +170,51 @@
 		413426131D27C5A40048BB35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				413426141D27C5AF0048BB35 /* Post+CoreDataProperties.swift */,
+				41FCF19D1D282BBB00C4B536 /* intitialize */,
+				41FCF19C1D282BAF00C4B536 /* properties */,
 				413426151D27C5AF0048BB35 /* Post.swift */,
-				413426161D27C5AF0048BB35 /* Zip+CoreDataProperties.swift */,
 				413426171D27C5AF0048BB35 /* Zip.swift */,
-				413426181D27C5AF0048BB35 /* Adress+CoreDataProperties.swift */,
 				413426191D27C5AF0048BB35 /* Adress.swift */,
-				4134261A1D27C5AF0048BB35 /* Website+CoreDataProperties.swift */,
 				4134261B1D27C5AF0048BB35 /* Website.swift */,
-				4134261C1D27C5AF0048BB35 /* Photo+CoreDataProperties.swift */,
 				4134261D1D27C5AF0048BB35 /* Photo.swift */,
-				4134261E1D27C5AF0048BB35 /* Company+CoreDataProperties.swift */,
 				4134261F1D27C5AF0048BB35 /* Company.swift */,
-				413426201D27C5AF0048BB35 /* Album+CoreDataProperties.swift */,
 				413426211D27C5AF0048BB35 /* Album.swift */,
-				413426221D27C5AF0048BB35 /* City+CoreDataProperties.swift */,
 				413426231D27C5AF0048BB35 /* City.swift */,
-				413426241D27C5AF0048BB35 /* Suite+CoreDataProperties.swift */,
 				413426251D27C5AF0048BB35 /* Suite.swift */,
-				413426261D27C5AF0048BB35 /* User+CoreDataProperties.swift */,
 				413426271D27C5AF0048BB35 /* User.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		41FCF19C1D282BAF00C4B536 /* properties */ = {
+			isa = PBXGroup;
+			children = (
+				413426141D27C5AF0048BB35 /* Post+CoreDataProperties.swift */,
+				413426161D27C5AF0048BB35 /* Zip+CoreDataProperties.swift */,
+				413426181D27C5AF0048BB35 /* Adress+CoreDataProperties.swift */,
+				4134261A1D27C5AF0048BB35 /* Website+CoreDataProperties.swift */,
+				4134261C1D27C5AF0048BB35 /* Photo+CoreDataProperties.swift */,
+				4134261E1D27C5AF0048BB35 /* Company+CoreDataProperties.swift */,
+				413426201D27C5AF0048BB35 /* Album+CoreDataProperties.swift */,
+				413426221D27C5AF0048BB35 /* City+CoreDataProperties.swift */,
+				413426241D27C5AF0048BB35 /* Suite+CoreDataProperties.swift */,
+				413426261D27C5AF0048BB35 /* User+CoreDataProperties.swift */,
+			);
+			name = properties;
+			sourceTree = "<group>";
+		};
+		41FCF19D1D282BBB00C4B536 /* intitialize */ = {
+			isa = PBXGroup;
+			children = (
+				41FCF19E1D282BE100C4B536 /* User+initialization.swift */,
+				41FCF1A01D28328E00C4B536 /* AdressInitialization.swift */,
+				41FCF1A21D283B8000C4B536 /* Company+Init.swift */,
+				41FCF1A41D28649E00C4B536 /* Website+Init.swift */,
+				41FCF1A61D28F9BD00C4B536 /* Post+initialization.swift */,
+				41FCF1AC1D28FDF100C4B536 /* Album+Initialization.swift */,
+				41FCF1AE1D28FF9F00C4B536 /* Photo+Initialization.swift */,
+			);
+			name = intitialize;
 			sourceTree = "<group>";
 		};
 		A1E695DA0629DDD803CEFFD1 /* Frameworks */ = {
@@ -298,24 +350,36 @@
 				413426361D27C5AF0048BB35 /* City+CoreDataProperties.swift in Sources */,
 				413426301D27C5AF0048BB35 /* Photo+CoreDataProperties.swift in Sources */,
 				4134263A1D27C5AF0048BB35 /* User+CoreDataProperties.swift in Sources */,
+				41FCF1AB1D28FDB500C4B536 /* DataController+AlbumRemoteInit.swift in Sources */,
 				4134263B1D27C5AF0048BB35 /* User.swift in Sources */,
 				413426111D27C03B0048BB35 /* DataController.swift in Sources */,
 				413426351D27C5AF0048BB35 /* Album.swift in Sources */,
+				41FCF19B1D28285F00C4B536 /* DataController+UserRemoteInit.swift in Sources */,
 				4134258A1D279BCF0048BB35 /* AppDelegate.swift in Sources */,
 				4134258D1D279BCF0048BB35 /* Sherpany.xcdatamodeld in Sources */,
+				41FCF1A91D28FD7A00C4B536 /* DataController+PostRemoteInit.swift in Sources */,
+				41FCF1A11D28328E00C4B536 /* AdressInitialization.swift in Sources */,
 				4134258F1D279BCF0048BB35 /* MasterViewController.swift in Sources */,
 				413425911D279BCF0048BB35 /* DetailViewController.swift in Sources */,
 				4134262C1D27C5AF0048BB35 /* Adress+CoreDataProperties.swift in Sources */,
+				41FCF1A71D28F9BD00C4B536 /* Post+initialization.swift in Sources */,
 				4134262E1D27C5AF0048BB35 /* Website+CoreDataProperties.swift in Sources */,
 				4134262B1D27C5AF0048BB35 /* Zip.swift in Sources */,
 				413426311D27C5AF0048BB35 /* Photo.swift in Sources */,
+				41FCF1A51D28649E00C4B536 /* Website+Init.swift in Sources */,
 				413426321D27C5AF0048BB35 /* Company+CoreDataProperties.swift in Sources */,
 				4134262A1D27C5AF0048BB35 /* Zip+CoreDataProperties.swift in Sources */,
+				41FCF1AF1D28FF9F00C4B536 /* Photo+Initialization.swift in Sources */,
 				413426331D27C5AF0048BB35 /* Company.swift in Sources */,
 				4134262D1D27C5AF0048BB35 /* Adress.swift in Sources */,
 				413426291D27C5AF0048BB35 /* Post.swift in Sources */,
+				41FCF1B11D29050400C4B536 /* DataController+PhotoRemoteInit.swift in Sources */,
 				413426391D27C5AF0048BB35 /* Suite.swift in Sources */,
+				4134263D1D27D9A80048BB35 /* JsonDownloader.swift in Sources */,
+				41FCF19F1D282BE100C4B536 /* User+initialization.swift in Sources */,
 				413426341D27C5AF0048BB35 /* Album+CoreDataProperties.swift in Sources */,
+				41FCF1AD1D28FDF100C4B536 /* Album+Initialization.swift in Sources */,
+				41FCF1A31D283B8000C4B536 /* Company+Init.swift in Sources */,
 				413426381D27C5AF0048BB35 /* Suite+CoreDataProperties.swift in Sources */,
 				413426281D27C5AF0048BB35 /* Post+CoreDataProperties.swift in Sources */,
 				4134262F1D27C5AF0048BB35 /* Website.swift in Sources */,

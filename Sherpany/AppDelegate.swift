@@ -40,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // load data from remote
+        JsonDownloader.sharedInstance.loadData()
     }
 
     func applicationWillTerminate(application: UIApplication) {

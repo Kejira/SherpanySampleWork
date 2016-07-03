@@ -8,6 +8,17 @@
 
 import CoreData
 
+enum CoreDataInitializationError: ErrorType {
+    case invalidUserData
+    case invalidAdressData
+    case invalidCompanyData
+    case invalidPostData
+    case invalidAlbumData
+    case invalidPhotoData
+    case userNotFound
+    case albumNotFound
+}
+
 class DataController {
     static let sharedInstance = DataController()
     

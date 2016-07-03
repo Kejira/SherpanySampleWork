@@ -15,7 +15,7 @@ class MasterViewController: UITableViewController {
     
     lazy var fetchedResultController: NSFetchedResultsController = {
         let fetchRequest = self.getFetchRequest()
-        let context = DataController.sharedInstance.createPrivateContext()
+        let context = DataController.sharedInstance.managedObjectContext
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
@@ -32,6 +32,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        fetchData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -98,7 +100,7 @@ class MasterViewController: UITableViewController {
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = fetchedResultController.objectAtIndexPath(indexPath)
-        cell.textLabel!.text = object.valueForKey("timeStamp")!.description
+        cell.textLabel!.text = object.valueForKey("title")!.description
     }
     
     // MARK: - Fetched results controller
