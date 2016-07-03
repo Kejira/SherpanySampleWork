@@ -12,7 +12,7 @@ extension DataController {
     func createAlbumsFromRemote(collection: NSArray) {
         let context = createPrivateContext()
         
-        context.performBlockAndWait {
+        context.performBlock {
             do {
                 try self.markAlbumsAsBeingUpdated(context)
                 _ = try collection.map({ (album) -> Album in
@@ -24,6 +24,9 @@ extension DataController {
             catch {
                 print("failed to saved data")
             }
+            
+            // load next
+            JsonDownloader.sharedInstance.getPhotosJson()
         }
     }
     

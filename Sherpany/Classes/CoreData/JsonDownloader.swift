@@ -18,7 +18,7 @@ class JsonDownloader {
     }
     
     func getUserJson() {
-        getJson("https://jsonplaceholder.typicode.com/users") { [weak self] response in
+        getJson("https://jsonplaceholder.typicode.com/users") { response in
             if let error = response.result.error {
                 // print error
             }
@@ -26,38 +26,26 @@ class JsonDownloader {
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data
                 DataController.sharedInstance.createUsersFromRemoteCollection(JSON)
-                
-                if let this = self {
-                    this.getPostsJson()
-                }
             }
         }
     }
     
     func getPostsJson() {
-        getJson("https://jsonplaceholder.typicode.com/posts/") { [weak self] response in
+        getJson("https://jsonplaceholder.typicode.com/posts/") { response in
             if let JSON = response.result.value as? NSArray {
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data
                 DataController.sharedInstance.createPostsFromRemote(JSON)
-                
-                if let this = self {
-                    this.getAlbumsJson()
-                }
             }
         }
     }
     
     func getAlbumsJson() {
-        getJson("https://jsonplaceholder.typicode.com/albums/") { [weak self] response in
+        getJson("https://jsonplaceholder.typicode.com/albums/") { response in
             if let JSON = response.result.value as? NSArray {
 //                print("JSON: \(JSON)")
                 // load JSON into Core Data
                 DataController.sharedInstance.createAlbumsFromRemote(JSON)
-                
-                if let this = self {
-                    this.getPhotosJson()
-                }
             }
         }
     }

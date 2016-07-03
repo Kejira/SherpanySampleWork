@@ -71,6 +71,22 @@ class MasterViewController: UITableViewController {
         return sectionInfo.numberOfObjects
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // calculate height needed
+        let post = fetchedResultController.objectAtIndexPath(indexPath) as! Post
+        let maxSize = CGSizeMake(self.view.frame.size.width - 30, CGFloat.max)
+        let titleFont = UIFont.systemFontOfSize(17.0)
+        let ownerFont = UIFont.systemFontOfSize(15.0)
+        
+        let postTitle = post.title! as NSString
+        let titleSize = postTitle.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: titleFont], context: nil)
+        
+        let owner = (post.user! as User).email! as NSString
+        let ownerSize = owner.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: ownerFont], context: nil)
+        
+        return titleSize.size.height + ownerSize.size.height + 15
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         self.configureCell(cell, atIndexPath: indexPath)
@@ -99,13 +115,16 @@ class MasterViewController: UITableViewController {
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = fetchedResultController.objectAtIndexPath(indexPath)
-        cell.textLabel!.text = object.valueForKey("title")!.description
+        if let cell = cell as? MasterViewCell,
+            let object = fetchedResultController.objectAtIndexPath(indexPath) as? Post {
+            cell.postTitleLabel.text = object.title ?? ""
+            cell.ownerEmailLabel.text = object.user?.email ?? ""
+        }
     }
     
-    // MARK: - Fetched results controller
 }
 
+// MARK: - Fetched results controller
 extension MasterViewController: NSFetchedResultsControllerDelegate {
     
     func getFetchRequest() -> NSFetchRequest {

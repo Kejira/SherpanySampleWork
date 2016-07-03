@@ -13,7 +13,7 @@ extension DataController {
     func createPostsFromRemote(collection: NSArray) {
         let context = createPrivateContext()
         
-        context.performBlockAndWait {
+        context.performBlock {
             do {
                 try self.markPostsAsBeingUpdated(context)
                 _ = try collection.map({ (post) -> Post in
@@ -25,6 +25,9 @@ extension DataController {
             catch {
                 print("failed to saved data")
             }
+            
+            // load next
+            JsonDownloader.sharedInstance.getAlbumsJson()
         }
     }
     

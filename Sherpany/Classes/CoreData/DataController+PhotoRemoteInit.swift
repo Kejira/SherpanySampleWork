@@ -12,7 +12,7 @@ extension DataController {
     func createPhotosFromRemote(collection: NSArray) {
         let context = createPrivateContext()
         
-        context.performBlockAndWait {
+        context.performBlock {
             do {
                 try self.markPhotosAsBeingUpdated(context)
                 _ = try collection.map({ (photo) -> Photo in
