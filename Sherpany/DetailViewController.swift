@@ -41,14 +41,23 @@ class DetailViewController: UIViewController {
         
         let flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.sectionHeadersPinToVisibleBounds = true
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        flowLayout.invalidateLayout()
+    }
 }
 
 extension DetailViewController: UICollectionViewDataSource {
@@ -133,5 +142,23 @@ extension DetailViewController: UICollectionViewDataSource {
         }
         collectionView.reloadSections(NSIndexSet(index: section))
     }
+    
+}
 
+extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let spaceForCells = collectionView.frame.size.width - 30
+        let amountOfCells = floor(spaceForCells / 150)
+        let space = spaceForCells % 150
+        let minimumSpace = space / (amountOfCells - 1)
+        return minimumSpace
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let spaceForCells = collectionView.frame.size.width - 30
+        let amountOfCells = floor(spaceForCells / 150)
+        let space = spaceForCells % 150
+        let minimumSpace = space / (amountOfCells - 1)
+        return minimumSpace
+    }
 }

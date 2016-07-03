@@ -52,6 +52,7 @@
 		41FCF1B51D29327B00C4B536 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */; };
 		41FCF1B71D29378B00C4B536 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */; };
 		41FCF1B91D293F5F00C4B536 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1B81D293F5F00C4B536 /* ImageDownloader.swift */; };
+		41FCF1BB1D2954A300C4B536 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF1BA1D2954A300C4B536 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHeaderView.swift; path = Classes/CollectionHeaderView.swift; sourceTree = "<group>"; };
 		41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionCell.swift; path = Classes/PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		41FCF1B81D293F5F00C4B536 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Classes/ImageDownloader.swift; sourceTree = "<group>"; };
+		41FCF1BA1D2954A300C4B536 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Classes/MainViewController.swift; sourceTree = "<group>"; };
 		482ECFCD22E6A0226B7CAB4C /* Pods_Sherpany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4223ED9A86F867DF0E8EC0B /* Pods-Sherpany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpany.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpany/Pods-Sherpany.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				41FCF1B41D29327B00C4B536 /* CollectionHeaderView.swift */,
 				41FCF1B61D29378B00C4B536 /* PhotoCollectionCell.swift */,
 				413425921D279BCF0048BB35 /* Main.storyboard */,
+				41FCF1BA1D2954A300C4B536 /* MainViewController.swift */,
 				413425951D279BCF0048BB35 /* Assets.xcassets */,
 				413425971D279BCF0048BB35 /* LaunchScreen.storyboard */,
 				4134259A1D279BCF0048BB35 /* Info.plist */,
@@ -380,6 +383,7 @@
 				4134262B1D27C5AF0048BB35 /* Zip.swift in Sources */,
 				41FCF1B31D290D4200C4B536 /* MasterViewCell.swift in Sources */,
 				413426311D27C5AF0048BB35 /* Photo.swift in Sources */,
+				41FCF1BB1D2954A300C4B536 /* MainViewController.swift in Sources */,
 				41FCF1A51D28649E00C4B536 /* Website+Init.swift in Sources */,
 				413426321D27C5AF0048BB35 /* Company+CoreDataProperties.swift in Sources */,
 				4134262A1D27C5AF0048BB35 /* Zip+CoreDataProperties.swift in Sources */,

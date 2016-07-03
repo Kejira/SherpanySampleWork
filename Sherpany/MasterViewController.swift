@@ -9,9 +9,14 @@
 import UIKit
 import CoreData
 
+protocol MasterViewControllerDelegate {
+    func showDetail(object: Post)
+}
+
 class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
+    var delegate: MasterViewControllerDelegate?
     
     lazy var fetchedResultController: NSFetchedResultsController = {
         let fetchRequest = self.getFetchRequest()
@@ -37,7 +42,6 @@ class MasterViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
     
@@ -47,16 +51,6 @@ class MasterViewController: UITableViewController {
     }
     
     // MARK: - Segues
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow,
-                let object = fetchedResultController.objectAtIndexPath(indexPath) as? Post {
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-            }
-        }
-    }
     
     // MARK: - Table View
     
@@ -120,6 +114,14 @@ class MasterViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let post = fetchedResultController.objectAtIndexPath(indexPath) as! Post
+        delegate?.showDetail(post)
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+    }
 }
 
 // MARK: - Fetched results controller
