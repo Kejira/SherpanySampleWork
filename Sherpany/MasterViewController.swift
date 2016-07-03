@@ -13,8 +13,9 @@ protocol MasterViewControllerDelegate {
     func showDetail(object: Post)
 }
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var detailViewController: DetailViewController? = nil
     var delegate: MasterViewControllerDelegate?
     
@@ -54,16 +55,16 @@ class MasterViewController: UITableViewController {
     
     // MARK: - Table View
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return fetchedResultController.sections?.count ?? 0
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // calculate height needed
         let post = fetchedResultController.objectAtIndexPath(indexPath) as! Post
         let maxSize = CGSizeMake(self.view.frame.size.width - 30, CGFloat.max)
@@ -79,18 +80,18 @@ class MasterViewController: UITableViewController {
         return titleSize.size.height + ownerSize.size.height + 15
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let context = fetchedResultController.managedObjectContext
             context.deleteObject(fetchedResultController.objectAtIndexPath(indexPath) as! NSManagedObject)
@@ -114,13 +115,14 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let post = fetchedResultController.objectAtIndexPath(indexPath) as! Post
         delegate?.showDetail(post)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
     }
 }
 

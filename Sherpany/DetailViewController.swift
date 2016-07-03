@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleBackgroundView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var detailTitleLabel: UILabel!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -27,10 +29,14 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let _ = self.detailDescriptionLabel {
+                titleBackgroundView.hidden = false
                 detailTitleLabel.text = detail.title
                 detailDescriptionLabel.text = detail.body
                 collectionView.reloadData()
             }
+        }
+        else {
+            titleBackgroundView.hidden = true
         }
     }
 
@@ -49,14 +55,8 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            return
-        }
-        
-        flowLayout.invalidateLayout()
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        collectionView.reloadData()
     }
 }
 
@@ -109,6 +109,25 @@ extension DetailViewController: UICollectionViewDataSource {
         }
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        var defaultSize = CGSizeMake(50, 40)
+        
+        if let album = self.detailItem?.user?.sortedAlbums()[section] {
+            // width of label should be collectionview width - button width - 20 leading - 5 trailing - 10 button trailing but its false...
+            let width = self.collectionView.frame.size.width - 100
+            let maxSize = CGSizeMake(width, CGFloat.max)
+            let titleFont = UIFont.boldSystemFontOfSize(15.0)
+            
+            
+            let albumTitle = album.name! as NSString
+            let titleSize = albumTitle.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: titleFont], context: nil)
+            defaultSize = CGSizeMake(50, titleSize.size.height + 10)
+        }
+        
+        return defaultSize
+    }
+    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "headerView", forIndexPath: indexPath)
         configureHeaderView(cell, atIndexPath: indexPath)
@@ -122,6 +141,7 @@ extension DetailViewController: UICollectionViewDataSource {
             cell.sectionButton.addTarget(self, action: #selector(DetailViewController.displaySection), forControlEvents: UIControlEvents.TouchUpInside)
             
             cell.titleLabel.text = album.name
+            print("width of label:", cell.titleLabel.frame.size.width)
             
             if let _ = openedSections[indexPath.section] {
                 cell.sectionButton.setTitle("Hide", forState: UIControlState.Normal)
@@ -130,6 +150,10 @@ extension DetailViewController: UICollectionViewDataSource {
                 cell.sectionButton.setTitle("Show", forState: UIControlState.Normal)
             }
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, atIndexPath indexPath: NSIndexPath) {
+        print("supplementary view width", view.frame.size.width)
     }
     
     func displaySection(button: UIButton) {
